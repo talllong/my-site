@@ -12,7 +12,7 @@
 .sidepanel {
   position: fixed;
   top: 210px;
-  left: -40px;
+  left: -20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -99,6 +99,42 @@
   font-size: 14px;
 }
 
+.hamburger {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  height: 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #151812;
+}
+
+.hamburger span.long {
+  width: 36px;
+}
+
+.hamburger span {
+  width: 30px;
+}
+
 .btn {
   height: 45px;
   background: #FFA501;
@@ -130,5 +166,107 @@
 
 .title_fz48 {
   font-size: 48px;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.menu.active {
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu__block {
+  position: relative;
+  width: 345px;
+  height: 100%;
+  background: #FFA501;
+  padding-top: 140px;
+  padding-left: 40px;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  z-index: 10;
+}
+
+.menu__close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.menu__list {
+  list-style-type: none;
+  padding-left: 35px;
+}
+
+.menu__link {
+  position: relative;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 15px;
+}
+
+.menu__link::before {
+  content: '';
+  position: absolute;
+  left: -35px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #000000;
+  border-radius: 100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.menu__link:hover::before {
+  background-color: #fff;
+}
+
+.menu__link a {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  color: #FFFFFF;
+}
+
+.menu__social {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffff;
+  opacity: 0.75;
 }
 /*# sourceMappingURL=style.css.map */

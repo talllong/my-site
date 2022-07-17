@@ -9,7 +9,7 @@
 .sidepanel
 	position: fixed
 	top: 210px	
-	left: -40px	
+	left: -20px	
 	display: flex
 	flex-direction: column
 	justify-content: space-between
@@ -60,6 +60,25 @@
 		color: #000000
 		font-weight: 700
 		font-size: 14px
+.hamburger
+	position: absolute
+	top: 20px
+	right: 30px
+	height: 21px
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	align-items: flex-end
+	cursor: pointer
+	span
+		display: block
+		width: 30px
+		height: 3px
+		background: #151812
+	span.long
+		width: 36px
+	span
+		width: 30px
 
 .btn
 	height: 45px
@@ -83,3 +102,76 @@
 		line-height: 24px
 	&_fz48
 		font-size: 48px
+
+.menu
+	position: fixed
+	top: 0
+	left: -100%
+	width: 100%
+	height: 100vh
+	z-index: 10
+	visibility: hidden
+	opacity: 0
+	transition: all 0.6s
+	&.active
+		left: 0
+		visibility: visible
+		opacity: 1
+
+	&__block
+		position: relative
+		// left: -100%
+		width: 345px
+		height: 100%
+		background: #FFA501
+		padding-top: 140px
+		padding-left: 40px	
+		transition: all 0.6s
+		z-index: 10
+	&__close
+		position: absolute
+		top: 25px
+		right: 25px
+		cursor: pointer
+	&__list
+		list-style-type: none
+		padding-left: 35px
+	&__link
+		position: relative
+		font-weight: 700
+		font-size: 24px
+		line-height: 36px
+		margin-bottom: 15px
+		&::before
+			content: ''
+			position: absolute
+			left: -35px
+			top: 10px
+			width: 15px
+			height: 15px
+			border: 1px solid #000000
+			border-radius: 100%
+			transition: all 0.6s
+		&:hover
+			&::before
+				background-color: #fff
+		a
+			text-decoration-line: none
+			color: #FFFFFF
+	&__social
+		position: absolute
+		bottom: 50px
+		left: 50%
+		transform: translateX(-50%)
+		width: 90px
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__overlay
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: #ffff
+		opacity: 0.75
